@@ -19,8 +19,8 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
         await click("After 11 PM",below("Departure Time"));
 
         //Moving the Price Range slider
-        await dragAndDrop($(`//div[@class='slider-thumb slider-thumb-0 ']`),{up:0,down:0,left:0,right:50}, { force: true});
-        await dragAndDrop($(`//div[@class='slider-thumb slider-thumb-1 ']`),{up:0,down:0,left:100,right:0}, { force: true});
+       // await dragAndDrop($(`//div[@class='slider-thumb slider-thumb-0 ']`),{up:0,down:0,left:0,right:50}, { force: true});
+        //await dragAndDrop($(`//div[@class='slider-thumb slider-thumb-1 ']`),{up:0,down:0,left:100,right:0}, { force: true});
         /*await evaluate($(`//div[@class='slider-thumb slider-thumb-0 ']`), (element) => {
             element.setAttribute('aria-valuenow', "500");});*/
         await waitFor(3000);
