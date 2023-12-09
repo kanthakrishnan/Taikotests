@@ -17,7 +17,7 @@ const { openBrowser, goto, click, below, textBox, into, write, $, dropDown, butt
         await scrollDown(10000);
         await click("Ownership", { force: true });
        
-        await click("Private");
+        await click("Private", { force: true });
         await click("Save");
         await text("Account Testing was created").exists();
         await click("New Contact");
