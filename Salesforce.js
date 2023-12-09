@@ -9,15 +9,18 @@ const { openBrowser, goto, click, below, textBox, into, write, $, dropDown, butt
         await click("Log In");
         await click($(`//div[@class='slds-icon-waffle']`));
         await scrollDown(1000);
-        await click("View All", { force: true });
+       await focus(button('View All'));
+        await click(button('View All'));
         await click("Sales");
         await click("Accounts");
         await click("New");
         await write("Testing",into(textBox(below("Account Name"))));
         await scrollDown(10000);
-        await click("Ownership", { force: true });
+        await focus(button(below('Ownership')));
+        await click(button(below('Ownership')));
+        
        
-        await click("Private", { force: true });
+        await click("Private");
         await click("Save");
         await text("Account Testing was created").exists();
         await click("New Contact");
