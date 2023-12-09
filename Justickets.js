@@ -1,4 +1,5 @@
 const { openBrowser, goto, click, $, closeBrowser, screenshot } = require('taiko');
+const date= Date.now();
 //const{ repl }=require('taiko\recorder');
 (async () => {
     try {
