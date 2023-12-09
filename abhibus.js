@@ -31,9 +31,9 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
             element.setAttribute('aria-valuenow', "500");});*/
         await waitFor(3000);
       
-          await evaluate($(`//div[contains(@id,'select-seat')]/button`),(elem) => elem.click());
-      
-       // await click(button("Show Seats"));
+      //    await evaluate($(`//div[contains(@id,'select-seat')]/button`),(elem) => elem.click());
+      await focus(button("Show Seats"));
+        await click(button("Show Seats"));
 
         //Choose an available seat
              await evaluate($(`//*[local-name()='rect'][1][(contains(@fill, 'white'))]/ancestor::button`),(elem) => elem.click())
