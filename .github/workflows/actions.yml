@@ -28,13 +28,13 @@ jobs:
         cache: 'npm'
   
     - run: npm install csv-parser
-    - run: npm install taiko
+    - run: npm install -g taiko
     - run: npm install @faker-js/faker 
     - run: npm ci
     - run: npm run build --if-present
     - run: taiko --version
     - run: npx taiko abhibus.js
-    - run: npx taiko AE_IncorrectLogin.js
+    - run: npx taiko AE_IncorrectLogin.js --observe
     - run: npx taiko AE_NewUser.js
     - run: npx taiko AE_SearchProducts.js
     - run: npx taiko AE_PlaceOrder.js
