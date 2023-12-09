@@ -9,7 +9,7 @@ const { openBrowser, goto, click, below, textBox, into, write, $, dropDown, butt
         await click("Log In");
         await click($(`//div[@class='slds-icon-waffle']`));
         await scrollDown(1000);
-        await click("View All");
+        await click("View All", { force: true });
         await click("Sales");
         await click("Accounts");
         await click("New");
