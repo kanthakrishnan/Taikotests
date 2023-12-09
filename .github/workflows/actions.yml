@@ -34,7 +34,7 @@ jobs:
     - run: npm run build --if-present
     - run: taiko --version
     - run: npx taiko abhibus.js
-    - run: npx taiko AE_IncorrectLogin.js --observe
+    - run: npx taiko AE_IncorrectLogin.js 
     - run: npx taiko AE_NewUser.js
     - run: npx taiko AE_SearchProducts.js
     - run: npx taiko AE_PlaceOrder.js
