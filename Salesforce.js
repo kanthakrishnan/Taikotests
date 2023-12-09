@@ -15,7 +15,7 @@ const { openBrowser, goto, click, below, textBox, into, write, $, dropDown, butt
         await click("New");
         await write("Testing",into(textBox(below("Account Name"))));
         await scrollDown(10000);
-        await click("Ownership");
+        await click("Ownership", { force: true });
        
         await click("Private");
         await click("Save");
