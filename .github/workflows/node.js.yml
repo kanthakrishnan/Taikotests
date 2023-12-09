@@ -32,5 +32,5 @@ jobs:
     - run: npm install @faker-js/faker 
     - run: npm ci
     - run: npm run build --if-present
-   
-    - run: npx taiko GoogleSearch.js
+    - run: npx taiko Justickets.js
+    - run: npx taiko abhibus.js
