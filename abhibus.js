@@ -10,10 +10,10 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
         await click("Chennai");
         await click($("//div[@id='search-to']"));
         await click("Bangalore");
-        await click("Search")
+        await click("Search");
 
         //Click Sleeper filter
-        await click($(`//a/span[contains(text(),'Sleeper')]`));
+        await evaluate($(`//a/span[contains(text(),'Sleeper')]`),(elem) => elem.click());
         //Choose departure time
         await click("After 11 PM",below("Departure Time"));
 
@@ -25,13 +25,14 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
         await click("Show Seats");
 
         //Choose an available seat
-            await click($(`//*[local-name()='rect'][1][(contains(@fill, 'white'))]/ancestor::button`));
+             await evaluate($(`//*[local-name()='rect'][1][(contains(@fill, 'white'))]/ancestor::button`),(elem) => elem.click())
         
         //Select Boarding and Dropping points
             checkBox(below($(`//input[@placeholder='Search Boarding Point']`))).check();
             checkBox(below($(`//input[@placeholder='Search Dropping Point']`))).check();
             await screenshot({fullPage:true},{path:".\\screenshots\\Abhibus_booking-"+date+".png"});
-            await click($(`//button//span[text()='Continue']`));
+         await evaluate($(`//button//span[text()='Continue']`),(elem) => elem.click());
+            
             await press("Tab");
             await click("Skip");
 
