@@ -23,7 +23,8 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
         await dragAndDrop($(`//div[@class='slider-thumb slider-thumb-1 ']`),{up:0,down:0,left:100,right:0}, { force: true})
         /*await evaluate($(`//div[@class='slider-thumb slider-thumb-0 ']`), (element) => {
             element.setAttribute('aria-valuenow', "500");});*/
-        await click("Show Seats",{waitForEvents:['loadEventFired']});
+        await waitFor(3000);
+        await click("Show Seats");
 
         //Choose an available seat
              await evaluate($(`//*[local-name()='rect'][1][(contains(@fill, 'white'))]/ancestor::button`),(elem) => elem.click())
