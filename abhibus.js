@@ -24,8 +24,9 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
         /*await evaluate($(`//div[@class='slider-thumb slider-thumb-0 ']`), (element) => {
             element.setAttribute('aria-valuenow', "500");});*/
         await waitFor(3000);
-        await focus(button("Show Seats"));
-        await click(button("Show Seats"));
+          await evaluate($(` (//button[text()='Show Seats'])[1]')]`),(elem) => elem.click());
+      
+       // await click(button("Show Seats"));
 
         //Choose an available seat
              await evaluate($(`//*[local-name()='rect'][1][(contains(@fill, 'white'))]/ancestor::button`),(elem) => elem.click())
