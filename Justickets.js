@@ -3,6 +3,7 @@ const date= Date.now();
 //const{ repl }=require('taiko\recorder');
 (async () => {
     try {
+          await setConfig({waitForNavigation: false});
         await openBrowser();
         //Click on the first movie and the next available showtime  from the list
         await goto('justickets.in/chennai');
