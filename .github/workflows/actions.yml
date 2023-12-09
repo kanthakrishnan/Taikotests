@@ -36,10 +36,10 @@ jobs:
     - run: npx taiko AE_IncorrectLogin.js
     - run: npx taiko AE_NewUser.js
     - run: npx taiko AE_SearchProducts.js
-    - run: npx taiko AE_PlaceOrder.js
+    - run: npx taiko AE_PlaceOrder.js --observe
     - run: npx taiko cheapoair.js
     - run: npx taiko GoogleSearch.js
-    - run: npx taiko Justickets.js
-    - run: npx taiko Salesforce.js
+    - run: npx taiko Justickets.js --observe
+    - run: npx taiko Salesforce.js --observe
     
     
