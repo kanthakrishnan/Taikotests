@@ -25,7 +25,7 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
             element.setAttribute('aria-valuenow', "500");});*/
         await waitFor(3000);
         await focus($(`//div[@class='container card service  md '][1]`));
-          await evaluate($(`//button[text()='Show Seats']`),(elem) => elem.click());
+          await evaluate($(`//div[contains(@id,'select-seat')]/button`),(elem) => elem.click());
       
        // await click(button("Show Seats"));
 
