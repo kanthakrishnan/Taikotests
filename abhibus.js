@@ -2,7 +2,13 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
 (async () => {
     try {
           await setConfig({waitForNavigation: false});
-        await openBrowser();
+      await openBrowser({args: [
+     '--disable-gpu',
+      '--disable-dev-shm-usage',
+      '--disable-setuid-sandbox',
+      '--no-first-run',
+      '--no-sandbox',
+      '--no-zygote']});
         //Search for buses
         await goto("https://www.abhibus.com",{waitForEvents:['loadEventFired']});
         await click("Buses");
