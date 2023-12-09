@@ -12,7 +12,7 @@ const { openBrowser, goto, click, below, textBox, into, write, $, dropDown, butt
        await focus(button('View All'));
         await click(button('View All'));
         await click("Sales");
-           await focus(link('Accounts')));
+           await focus(link('Accounts'));
                 await click(link("Accounts"));
         await click("New");
         await write("Testing",into(textBox(below("Account Name"))));
