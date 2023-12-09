@@ -4,14 +4,15 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
           await setConfig({waitForNavigation: false});
         await openBrowser();
         //Search for buses
-        await goto("abhibus.com");
+        await goto("abhibus.com",{waitForEvents:['loadEventFired']});
         await click("Buses");
         await click($("//div[@id='search-from']"));
         await click("Chennai");
-        await click($("//div[@id='search-to']"));
-        await click("Bangalore");
-        await click("Search");
-
+        await evaluate($("//div[@id='search-to']"),(elem) => elem.click());
+       await click("Bangalore");
+       await waitFor(3000);
+       
+        await click(link("Search"));
         //Click Sleeper filter
         await evaluate($(`//a/span[contains(text(),'Sleeper')]`),(elem) => elem.click());
         //Choose departure time
@@ -22,7 +23,7 @@ const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo
         await dragAndDrop($(`//div[@class='slider-thumb slider-thumb-1 ']`),{up:0,down:0,left:100,right:0}, { force: true})
         /*await evaluate($(`//div[@class='slider-thumb slider-thumb-0 ']`), (element) => {
             element.setAttribute('aria-valuenow', "500");});*/
-        await click("Show Seats");
+        await click("Show Seats",{waitForEvents:['loadEventFired']});
 
         //Choose an available seat
              await evaluate($(`//*[local-name()='rect'][1][(contains(@fill, 'white'))]/ancestor::button`),(elem) => elem.click())
