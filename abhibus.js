@@ -1,6 +1,7 @@
 const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo } = require('taiko');
 (async () => {
     try {
+          await setConfig({waitForNavigation: false});
         await openBrowser();
         //Search for buses
         await goto("abhibus.com");
