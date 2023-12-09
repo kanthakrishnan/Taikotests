@@ -17,16 +17,15 @@ const date= Date.now();
 
         //Product 1
         await hover(image(toLeftOf("ALL PRODUCTS")));
-        await click($(`//div[@class='single-products']//a[1]`));
-        waitFor(3000);
+       
+        await click("Add to cart",below("Blue Top"));
         await click("Continue Shopping");
 
-        //Product2 - quantity-2     
-        await hover(image(below("ALL PRODUCTS")));
-        await click($(`(//div[@class='single-products'])[2]//a`));
-        waitFor(3000);
+        //Product2
+        await click("Add to cart",below("Men Tshirt"));
         await click("Continue Shopping");
-        await click($(`(//div[@class='single-products'])[2]//a`));
+        await click("Add to cart",below("Men Tshirt"));
+       
         await click("View Cart");
 
         //Checking the description for the selected items
