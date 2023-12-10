@@ -19,7 +19,7 @@ jobs:
      matrix:
         node-version: [ 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    continue-on-error: true
+    
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -27,7 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-  
+        continue-on-error: true
     - run: npm install csv-parser
     - run: npm install -g taiko
     - run: npm install @faker-js/faker 
