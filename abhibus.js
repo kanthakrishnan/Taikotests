@@ -1,4 +1,5 @@
 const { diagnostics, openBrowser, goto, click, $, button, closeBrowser, switchTo } = require('taiko');
+const date= Date.now();
 (async () => {
     try {
           await setConfig({waitForNavigation: false});
