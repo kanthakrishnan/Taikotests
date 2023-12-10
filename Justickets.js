@@ -32,6 +32,7 @@ const date= Date.now();
     } catch (error) {
           await screenshot({fullPage:true},{path:".\\screenshots\\Justickets-"+date+".png"});
         console.error(error);
+         process.exitCode = 1;
     } finally {
        await closeBrowser();
     }
