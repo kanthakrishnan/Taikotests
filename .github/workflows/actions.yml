@@ -16,8 +16,7 @@ jobs:
     
 
     strategy:
-    fail-fast: false
-      matrix:
+     matrix:
         node-version: [ 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     continue-on-error: true
