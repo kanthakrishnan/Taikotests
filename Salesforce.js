@@ -34,6 +34,7 @@ const { openBrowser, goto, click, below, textBox, into, write, $, dropDown, butt
       
     } catch (error) {
         console.error(error);
+         process.exitCode = 1;
     } finally {
         await closeBrowser();
     }
