@@ -27,7 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        continue-on-error: true
+        
     - run: npm install csv-parser
     - run: npm install -g taiko
     - run: npm install @faker-js/faker 
