@@ -35,18 +35,13 @@ jobs:
     - run: npm run build --if-present
     - run: taiko --version
     - run: npx taiko abhibus.js
-      continue-on-error: true
     - run: npx taiko AE_IncorrectLogin.js 
     - run: npx taiko AE_NewUser.js
     - run: npx taiko AE_SearchProducts.js
     - run: npx taiko AE_PlaceOrder.js
-      continue-on-error: true
     - run: npx taiko cheapoair.js
-      continue-on-error: true
     - run: npx taiko GoogleSearch.js
     - run: npx taiko Justickets.js 
-      continue-on-error: true
     - run: npx taiko Salesforce.js
-      continue-on-error: true
-    
+     
     
