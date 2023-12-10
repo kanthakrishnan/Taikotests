@@ -11,8 +11,8 @@ const { diagnostics, openBrowser, goto, text, click, into, textBox, write, close
         await click("Login");
         await text("Your email or password is incorrect!").exists();
     } catch (error) {
-         process.exitCode = 1;
         console.error(error);
+        process.exitCode = 1;
     } finally {
         await closeBrowser();
     }
