@@ -7,15 +7,15 @@ const date= Date.now();
         await openBrowser();
         //Click on the first movie and the next available showtime  from the list
         await goto('justickets.in/chennai');
-        await click($(`//div[@class='poster']//img[1]`));
-        await click($(`//div[@class='datebar']//span[1]`));
-        await click($(`//a[@class='schedule available']`));
-        await click("OKAY");
+        await click($(`div.name`));
+        await click($(`div.shadow-small`));
+        await click($(`a.schedule`));
+        await click(button("OKAY"));
        
         //Choose 2 available seats 
         await evaluate($(`//div[contains(@class,"seat available")][1]/div/div[2]`),(elem) => elem.click());
         await evaluate($(`//div[contains(@class,"seat available")][2]/div/div[2]`),(elem) => elem.click());
-       await click($(`//span[contains(text(),'Confirm')]`));
+        await evaluate($(`//span[contains(text(),'Confirm')]`),(elem) => elem.click());
        
        await waitFor(3000);
        await screenshot({fullPage:true},{path:".\\screenshots\\Justickets-"+date+".png"});
@@ -30,6 +30,7 @@ const date= Date.now();
        await write('9790990450', into(textBox(below(text('Mobile')))));
         
     } catch (error) {
+          await screenshot({fullPage:true},{path:".\\screenshots\\Justickets-"+date+".png"});
         console.error(error);
     } finally {
        await closeBrowser();
