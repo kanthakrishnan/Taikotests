@@ -13,13 +13,13 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    continue-on-error: true
+    
 
     strategy:
       matrix:
         node-version: [ 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
+    continue-on-error: true
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
