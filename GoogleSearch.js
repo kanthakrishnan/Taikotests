@@ -20,6 +20,7 @@ const assert = require('assert').strict;
         //await repl
     } catch (error) {
         console.error(error);
+         process.exitCode = 1;
     } finally {
         await closeBrowser();
     }
