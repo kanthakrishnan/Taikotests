@@ -50,6 +50,7 @@ const firstName=faker.name.firstName();
        
     } catch (error) {
         console.error(error);
+         process.exitCode = 1;
     } finally {
        await closeBrowser();
     }
